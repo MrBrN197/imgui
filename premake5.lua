@@ -2,8 +2,6 @@
 project "ImGui"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++14"
-    staticruntime "on"
 
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -23,12 +21,18 @@ project "ImGui"
 
     filter "system:windows"
         systemversion "latest"
+		cppdialect "C++17"
+		staticruntime "On"
+
+	filter "system:linux"
+		pic "On"
+		systemversion "latest"
+		cppdialect "C++17"
+		staticruntime "On"
 		
     filter "configurations:Debug"
-		defines "HZ_DEBUG"
 		runtime "Debug"
-		symbols "on"
+		symbols "On"
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
 		runtime "Release"
-		optimize "on"
+		optimize "On"

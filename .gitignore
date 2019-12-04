@@ -1,3 +1,11 @@
-#Directories
-/bin-int
-/bin
+# Directories
+/bin-int/
+/bin/
+/*.vs/
+/*.vscode/
+
+# Files
+/*.user
+/*.vcxproj
+/*.vcxproj.filters
+Makefile
